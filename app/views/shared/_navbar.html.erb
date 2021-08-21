@@ -30,6 +30,17 @@
           <span class='divider'>
           </span>
         </li>
+
+        <li>
+          <%= link_to notifications_path, data: { test_id: 'navbar-notification-icon' } do %>
+            <% if unread_notifications?(current_user) %>
+              <%= svg_icon 'icon-mail-warning' %>
+            <% else %>
+              <%= svg_icon 'icon-no-mail' %>
+            <% end %>
+          <% end %>
+        </li>
+
         <%= render 'shared/user_dropdown' %>
       </ul>
   <% else %>
